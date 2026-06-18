@@ -1,16 +1,292 @@
-<h1>AGRINH0 2026</h1>
-
-<p>Vou compartilhar conhecimentos sobre Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
 <!DOCTYPE html>
-
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>blog</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGRINHO 2026 – Agro Forte, Futuro Sustentável</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde-escuro: #1a3a2a;
+      --verde-medio: #2d6a4f;
+      --verde-claro: #52b788;
+      --terra:        #c77c3a;
+      --palha:        #f4e9d0;
+      --branco:       #fdfcf8;
+      --texto:        #1e1e1e;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--branco);
+      color: var(--texto);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background-color: var(--verde-escuro);
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--verde-claro);
+      letter-spacing: 0.05em;
+    }
+
+    nav a {
+      color: var(--palha);
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--verde-claro); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-medio) 60%, var(--verde-claro) 100%);
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '🌱';
+      font-size: 8rem;
+      position: absolute;
+      top: -1rem;
+      right: 5%;
+      opacity: 0.12;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background-color: var(--terra);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 2px;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: #fff;
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .hero h1 span { color: var(--verde-claro); }
+
+    .hero p {
+      color: var(--palha);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+    }
+
+    .hero-btn {
+      background-color: var(--terra);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+    .hero-btn:hover { background-color: #a86228; transform: translateY(-2px); }
+
+    /* ── SEÇÃO DE ARTIGOS ── */
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--verde-escuro);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-line {
+      width: 48px;
+      height: 3px;
+      background-color: var(--terra);
+      border-radius: 2px;
+      margin-bottom: 2.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      border: 1px solid #e0dbd0;
+      border-radius: 6px;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background: #fff;
+    }
+    .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.1); transform: translateY(-3px); }
+
+    .card-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: linear-gradient(135deg, var(--verde-medio), var(--verde-claro));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+    }
+
+    .card-body { padding: 1.2rem 1.4rem 1.6rem; }
+
+    .card-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terra);
+      margin-bottom: 0.5rem;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--verde-escuro);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .card p { font-size: 0.9rem; color: #555; }
+
+    /* ── DESTAQUE ── */
+    .destaque {
+      background-color: var(--palha);
+      border-left: 5px solid var(--verde-claro);
+      padding: 2.5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto 4rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .destaque blockquote {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--verde-escuro);
+      line-height: 1.5;
+    }
+
+    .destaque cite {
+      display: block;
+      margin-top: 0.8rem;
+      font-size: 0.85rem;
+      color: #666;
+      font-style: normal;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background-color: var(--verde-escuro);
+      color: var(--palha);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+
+    footer strong { color: var(--verde-claro); }
+  </style>
 </head>
 <body>
-<h1>Meu blog tech</h1>
-<p>Vou compartilhar conhecimentos sobre Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
+
+  <!-- Cabeçalho -->
+  <header>
+    <span class="logo">🌿 AGRINHO 2026</span>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Sobre</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-tag">Agrinho 2026</span>
+    <h1>Agro Forte,<br><span>Futuro Sustentável</span></h1>
+    <p>Compartilhando conhecimentos sobre o equilíbrio entre produção agrícola e preservação do meio ambiente.</p>
+    <a href="#artigos" class="hero-btn">Ver artigos</a>
+  </section>
+
+  <!-- Artigos -->
+  <div class="section" id="artigos">
+    <h2 class="section-title">Artigos em Destaque</h2>
+    <div class="section-line"></div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card-img">🌾</div>
+        <div class="card-body">
+          <p class="card-label">Produção</p>
+          <h2>Agricultura Sustentável no Cerrado</h2>
+          <p>Como produtores estão equilibrando alta produtividade com o respeito ao bioma.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">💧</div>
+        <div class="card-body">
+          <p class="card-label">Meio Ambiente</p>
+          <h2>Gestão da Água no Campo</h2>
+          <p>Técnicas modernas de irrigação que reduzem o desperdício hídrico em até 40%.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-img">🤖</div>
+        <div class="card-body">
+          <p class="card-label">Tecnologia</p>
+          <h2>AgroTech: O Futuro da Fazenda</h2>
+          <p>Drones, sensores e IA transformando a forma como cultivamos alimentos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Destaque / Citação -->
+  <div class="destaque">
+    <blockquote>
+      "Produzir com responsabilidade hoje é garantir que as próximas gerações herdem um planeta capaz de alimentá-las."
+    </blockquote>
+    <cite>— Tema central do Agrinho 2026</cite>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>Feito com 🌱 para o <strong>Agrinho 2026</strong> &nbsp;|&nbsp; Meu Blog Tech</p>
+  </footer>
+
 </body>
 </html>
